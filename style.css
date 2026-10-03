@@ -40,3 +40,4 @@ canvas.confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:non
 #jumpbar input{padding:0;border:0;background:transparent;accent-color:var(--gold);margin:8px 0;height:28px}
 #skip2{width:100%;padding:8px;font-size:14px;background:var(--edge);border:1px solid var(--gold);border-radius:10px}
 [hidden]{display:none!important}
+#skip3{width:100%;padding:8px;font-size:14px;margin-top:6px;background:var(--edge);border:1px solid var(--gold);border-radius:10px}
