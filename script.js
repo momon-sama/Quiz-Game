@@ -3,7 +3,7 @@ const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; }
 const store = v => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} };
 let done = new Set(), streak = 0, player = "", custom = load(), pool = [], i = 0, score = 0, answered = false;
 const $ = id => document.getElementById(id);
-const all = () => DEFAULTS.map(q => [...q, 1]).concat(LEVEL2.map(q => [...q, 2]), LEVEL3.map(q => [...q, 3]), HOSP, custom.map(q => [q[0], q[1], q[2], q[3], q[4] || 1]));
+const all = () => DEFAULTS.map(q => [...q, 1]).concat(LEVEL2.map(q => [...q, 2]), LEVEL3.map(q => [...q, 3]), HOSP, FO, custom.map(q => [q[0], q[1], q[2], q[3], q[4] || 1]));
 const sections = () => [...new Set(all().map(q => q[0]))];
 
 function refreshFilter() {
