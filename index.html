@@ -27,13 +27,14 @@
 
 <section id="quiz">
   <div class="row">
-    <select id="level"><option value="All">All levels</option><option value="1">Level 1</option><option value="2">Level 2</option></select>
+    <select id="level"><option value="All">All levels</option><option value="1">Level 1</option><option value="2">Level 2</option><option value="3">Level 3</option></select>
     <select id="filter"></select>
   </div>
   <div id="jumpbar">
     <label for="jump" id="jl"></label>
     <input type="range" id="jump" min="1" max="1" value="1">
     <button id="skip2">Skip to Level 2</button>
+    <button id="skip3">Skip to Level 3</button>
   </div>
   <div id="app"></div>
 </section>
@@ -41,7 +42,7 @@
 <section id="add" hidden>
   <input id="f-sec" list="secs" placeholder="Section (e.g. Front Office)">
   <datalist id="secs"></datalist>
-  <select id="f-lv"><option value="1">Level 1</option><option value="2">Level 2</option></select>
+  <select id="f-lv"><option value="1">Level 1</option><option value="2">Level 2</option><option value="3">Level 3</option></select>
   <textarea id="f-q" rows="2" placeholder="Question"></textarea>
   <div class="opt"><input type="radio" name="c" value="0" checked><input id="f-o0" placeholder="Option A"></div>
   <div class="opt"><input type="radio" name="c" value="1"><input id="f-o1" placeholder="Option B"></div>
@@ -63,6 +64,7 @@
 
 <script src="defaults.js"></script>
 <script src="defaults2.js"></script>
+<script src="defaults3.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
