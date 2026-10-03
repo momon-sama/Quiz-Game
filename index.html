@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taj HOT/MT Quiz Maker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="welcome">
+  <div class="bell">🛎️</div>
+  <h1>Check in to your test!</h1>
+  <p>Taj HOT/MT practice. What should we call you?</p>
+  <input id="name" placeholder="Your name" maxlength="40">
+  <button id="go" class="primary">Let's go!</button>
+  <p id="nmsg" class="hint"></p>
+</section>
+
+<div id="main" hidden>
+<nav>
+  <button class="tab active" data-tab="quiz">Quiz</button>
+  <button class="tab" data-tab="add">Add Question</button>
+  <button class="tab" data-tab="mine">My Questions</button>
+</nav>
+
+<section id="quiz">
+  <select id="filter"></select>
+  <div id="app"></div>
+</section>
+
+<section id="add" hidden>
+  <input id="f-sec" list="secs" placeholder="Section (e.g. Front Office)">
+  <datalist id="secs"></datalist>
+  <textarea id="f-q" rows="2" placeholder="Question"></textarea>
+  <div class="opt"><input type="radio" name="c" value="0" checked><input id="f-o0" placeholder="Option A"></div>
+  <div class="opt"><input type="radio" name="c" value="1"><input id="f-o1" placeholder="Option B"></div>
+  <div class="opt"><input type="radio" name="c" value="2"><input id="f-o2" placeholder="Option C"></div>
+  <div class="opt"><input type="radio" name="c" value="3"><input id="f-o3" placeholder="Option D"></div>
+  <p class="hint">Select the radio button next to the correct answer.</p>
+  <button id="save" class="primary">Save Question</button>
+  <p id="msg"></p>
+</section>
+
+<section id="mine" hidden>
+  <div id="list"></div>
+  <button id="export">Export JSON</button>
+  <button id="import">Import JSON</button>
+  <input type="file" id="file" accept=".json" hidden>
+</section>
+
+</div>
+
+<script src="defaults.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
