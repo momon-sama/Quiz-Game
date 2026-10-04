@@ -3,7 +3,7 @@ const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; }
 const store = v => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} };
 let done = new Set(), streak = 0, player = "", custom = load(), pool = [], i = 0, score = 0, answered = false;
 const $ = id => document.getElementById(id);
-const all = () => DEFAULTS.map(q => [...q, 1]).concat(LEVEL2.map(q => [...q, 2]), LEVEL3.map(q => [...q, 3]), HOSP, FO, custom.map(q => [q[0], q[1], q[2], q[3], q[4] || 1]));
+const all = () => DEFAULTS.map(q => [...q, 1]).concat(LEVEL2.map(q => [...q, 2]), LEVEL3.map(q => [...q, 3]), HOSP, FO, L4, custom.map(q => [q[0], q[1], q[2], q[3], q[4] || 1]));
 const sections = () => [...new Set(all().map(q => q[0]))];
 
 function refreshFilter() {
@@ -26,6 +26,7 @@ function syncJump() {
   const all_ = $("level").value === "All";
   $("skip2").hidden = !all_ || !pool.some(q => q[4] === 2);
   $("skip3").hidden = !all_ || !pool.some(q => q[4] === 3);
+  $("skip4").hidden = !all_ || !pool.some(q => q[4] === 4);
 }
 function render() {
   const app = $("app"); syncJump();
@@ -110,7 +111,7 @@ document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
 $("filter").onchange = start;
 $("level").onchange = start;
 $("jump").oninput = e => { i = +e.target.value - 1; render(); };
-[2, 3].forEach(n => $("skip" + n).onclick = () => { const k = pool.findIndex(q => q[4] === n); if (k >= 0) { i = k; render(); } });
+[2, 3, 4].forEach(n => $("skip" + n).onclick = () => { const k = pool.findIndex(q => q[4] === n); if (k >= 0) { i = k; render(); } });
 refreshFilter(); renderList(); start();
 
 function begin() {
